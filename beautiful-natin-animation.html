@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes sun-movement {
+            0% {
+                /* background-color: orange; */
+                top: 250px;
+                left: 0;
+            }
+
+            33.33% {
+                top: 20px;
+                left: 200px;
+                /* background-color: yellow; */
+
+            }
+
+            66.66% {
+                top: 20px;
+                left: 400px;
+                /* background-color: yellow; */
+            }
+
+            /* 75% {
+                top: 50px;
+                left: 500px;
+            } */
+
+            100% {
+                /* background-color: crimson; */
+                top: 200px;
+                left: 600px;
+            }
+
+        }
+
+        @keyframes bird {
+
+            from {
+                right: 0;
+                top: 110px;
+            }
+
+            to {
+                right: 400px;
+                top: 120px;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-frame {
+            width: 60%;
+            min-height: 500px;
+            /* border: 2px solid green; */
+            /* background-color: skyblue; */
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .seen {
+            width: 100%;
+            position: relative;
+            z-index: 0;
+            /* border: 5px solid coral; */
+            box-shadow: 1px 3px 21px 14px grey;
+            border-radius: 10px;
+
+        }
+
+        .sky {
+            width: 100%;
+            height: 300px;
+            background-color: skyblue;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .sun {
+            width: 180px;
+            height: 180px;
+            /* background-color: red; */
+            /* border-radius: 50%; */
+            animation: sun-movement 9s linear 0.1s infinite normal;
+            animation-play-state: running;
+            position: relative;
+        }
+
+        .bird {
+            width: 200px;
+            position: absolute;
+            /* right: 0;
+            top: 150px; */
+            animation: bird 9s linear 0.4s infinite normal;
+            /* z-index: 2; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-frame">
+        <img class="seen" src="images/new-seen.png" alt="">
+        <div class="sky">
+            <img class="sun" src="images/sun.gif" alt="">
+            <img class="bird" src="images/bird.gif" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
